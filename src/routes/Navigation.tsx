@@ -1,6 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { NavLink } from "react-router-dom"
 import logo from '../assets/react.svg'
+import { LazyPageOne, LazyPageThree, LazyPageTwo } from '../lazyloadone/pages'
 
 export const Navigation = () => {
   return (
@@ -22,9 +23,9 @@ export const Navigation = () => {
             </nav>
             
             <Routes>
-                <Route path="about" element={<h1>About Page</h1>} />
-                <Route path="users" element={<h1>Users Page</h1>} />
-                <Route path="home" element={<h1>Home Page</h1>} />
+                <Route path="about" element={<LazyPageTwo />} />
+                <Route path="users" element={<LazyPageThree />} />
+                <Route path="home"  element={<LazyPageOne />} />
                 <Route path="/*" element={<Navigate to="/home" replace/>} />
             </Routes>
         </div>
